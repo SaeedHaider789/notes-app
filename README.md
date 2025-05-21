@@ -25,7 +25,7 @@ A lightweight, web-based note-taking application that allows you to store person
 * **Frontend**: React.js, HTML, CSS
 * **Backend**: Node.js, Express.js
 * **Database**: MongoDB
-* **Deployment**: Vercel([Hacker News][2])
+* **Deployment**: Vercel
 
 ---
 
