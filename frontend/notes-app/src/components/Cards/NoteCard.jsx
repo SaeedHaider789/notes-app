@@ -17,8 +17,8 @@ const NoteCard = ({
 }) => {
   
   return (
-    <div id={id} className="card border-2 border-slate-300 max-sm:m-2 max-sm:p-2 p-4 flex justify-between items-center">
-      <div className="card-details max-sm:w-72 w-80 overflow-hidden">
+    <div id={id} className="verySmallContainer card border-2 border-slate-300 max-sm:m-2 max-sm:p-2 p-4 flex justify-between items-center">
+      <div className="verySmall card-details max-sm:w-72 w-80 overflow-hidden">
         <p className="text-title font-semibold break-words whitespace-normal">{title}</p>
         <div className="body">
           <p className="date text-slate-600 my-1 text-xs">{date}</p>

@@ -3,3 +3,14 @@
         grid-template-columns: auto !important;
     }
 }
+
+@media screen and (width<100px) {
+    .verySmall{
+        /* background-color: green; */
+        width: 189px;
+    }
+    .verySmallContainer{
+        margin-left: 0.5px !important;
+        margin-right: 0.5px !important;
+    }
+}
