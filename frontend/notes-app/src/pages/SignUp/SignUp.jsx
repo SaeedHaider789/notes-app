@@ -52,7 +52,7 @@ const SignUp = () => {
     else{
       setError("")
       // api call to save all the data
-      let response = await saveSignUpData(name.toLowerCase(), email, password);
+      let response = await saveSignUpData(name.toLowerCase(), email.toLowerCase().trim(), password);
       // console.log('helo')
       navigate('/login')
     }
