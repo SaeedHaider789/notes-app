@@ -1,0 +1,5 @@
+@media screen and (max-width: 540px){
+    .query1{
+        grid-template-columns: auto !important;
+    }
+}
