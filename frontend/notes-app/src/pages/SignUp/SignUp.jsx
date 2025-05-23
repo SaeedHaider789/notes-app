@@ -59,13 +59,13 @@ const SignUp = () => {
       setError("")
 
       // console.log(email.slice(email.indexOf('@')+1, email.indexOf('.')))
-      if(email.slice(email.indexOf('@')+1, email.indexOf('.')) == 'gmail'){  // if the email host is gmail
-        let otp = await getOTP(setOtpCheckBox, email)
-        // console.log(otp)
-        setFetchedOTP(otp)
-        return ''
-      }
-
+      // if(email.slice(email.indexOf('@')+1, email.indexOf('.')) == 'gmail'){  // if the email host is gmail
+      //   let otp = await getOTP(setOtpCheckBox, email)
+      //   // console.log(otp)
+      //   setFetchedOTP(otp)
+      //   return ''
+      // }
+      // otp verification is not working on vercel
 
       // api call to save all the data
       let response = await saveSignUpData(name.toLowerCase(), email.toLowerCase().trim(), password);
