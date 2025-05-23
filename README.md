@@ -17,6 +17,7 @@ A lightweight, web-based note-taking application that allows you to store person
 * **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
 * **Real-Time Updates**: Notes are saved and updated in real-time.
 * **Categorization**: Organize notes with categories or tags.
+* OTP Verification for gmail
 
 ---
 
