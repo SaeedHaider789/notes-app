@@ -61,7 +61,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar loggedIn={true} docs={docs} setDocs={setDocs}/>
+      <Navbar loggedIn={true} docs={docs} setDocs={setDocs} user={userName} />
 
       <div className="container mx-auto">
         <div className="grid query1 md:grid-cols-3 max-md:grid-cols-2 gap-2 mt-20 max-sm:mb-20 mb-3">

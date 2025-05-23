@@ -16,14 +16,22 @@ export function validateEmail(email) {
     return true;
 }
 
-export const getInitials = (name) =>{
-    if(!name) return ''
+export const getInitials = (user) =>{
+    if(!user) return ''
 
-    const words = name.split(" ")
-    let initials = ""
+    // console.log(user)
+    let initials = ''
+    if (user.split(" ").length >= 2) {
+        const words = user.split(" ")
+        initials = ""
 
-    for(let i = 0; i < 2; i++){
-        initials = initials + words[i][0]
+        for (let i = 0; i < 2; i++) {
+            initials = initials + words[i][0]
+        }
+        // console.log(initials)
+    }
+    else{
+        initials = user[0]
     }
 
     return initials.toUpperCase()

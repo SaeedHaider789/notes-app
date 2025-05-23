@@ -17,7 +17,7 @@ const AddEditNotes = ({openEditNotes, setOpenEditNotes, setDocs}) => {
 
 
   return (
-    <div className='mainAddEdit w-[40%] max-sm:w-[100%] max-h-3/4 bg-white p-1 rounded-md m-1'>
+    <div className='mainAddEdit w-[40%] max-sm:w-[96%] max-h-3/4 bg-white p-1 rounded-md m-1'>
         <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
                 <label className="input-lable">TITTLE</label>

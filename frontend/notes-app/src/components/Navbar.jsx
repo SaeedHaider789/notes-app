@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import ProfileInfo from './Cards/profileInfo'
 import SearchBar from './SearchBar/SearchBar'
 
-const Navbar = ({loggedIn = false, docs, setDocs}) => {
+const Navbar = ({loggedIn = false, docs, setDocs, user}) => {
   
   let mainDocsBeforeSearch = useRef()  // it will store the docs and won't change on render
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,8 +32,8 @@ const Navbar = ({loggedIn = false, docs, setDocs}) => {
   }
 
   const forLoggedIn = [<SearchBar key={1} value={searchQuery} onChange={(e)=>{setSearchQuery(e.target.value)}} handleSearch={handleSearch} clearQuerry={()=>{setSearchQuery(''); setDocs(mainDocsBeforeSearch.current)}} />,
-                      <ProfileInfo key={2}/>]
-
+                      <ProfileInfo key={2} user={user}/>]
+  
   if(!loggedIn){
     return (
       <div className='flex justify-center items-center'>
