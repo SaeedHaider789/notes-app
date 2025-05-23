@@ -18,7 +18,7 @@ app.use('/signup', signup)
 app.use('/dashboard', dashboard)
 
 app.get('/', async(req, res)=>{
-    res.json({hey: "slfje"})
+    res.json({hey: "Welcome to notes-app"})
 })
 
 app.listen(port, ()=>{

@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 import Navbar from '../../components/Navbar'
 import Password from '../../components/Inputs/PasswordInput'
+import OtpBox from './OtpSignup'
 import { Link } from 'react-router'
 import { validateEmail } from '../../utils/helper'
 import {emailRegistered} from '../../utils/helper'
 import { useNavigate } from 'react-router'
 import {saveSignUpData} from '../../utils/helper'
+import { getOTP } from './otpVerifier'
+
 
 const SignUp = () => {
 
@@ -15,7 +18,10 @@ const SignUp = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(null)
-  const [otpBox, setOtpBox] = useState(false)
+  const [otpCheckBox, setOtpCheckBox] = useState(false)
+  // the below states will only be used for gmail mails
+  const [inputOTP, setInputOTP] = useState('') // store the input value of otp
+  const [fetchedOTP, setFetchedOTP] = useState()
 
   const handleSignUp = async(e) =>{
     e.preventDefault()
@@ -51,6 +57,16 @@ const SignUp = () => {
     }
     else{
       setError("")
+
+      // console.log(email.slice(email.indexOf('@')+1, email.indexOf('.')))
+      if(email.slice(email.indexOf('@')+1, email.indexOf('.')) == 'gmail'){  // if the email host is gmail
+        let otp = await getOTP(setOtpCheckBox, email)
+        // console.log(otp)
+        setFetchedOTP(otp)
+        return ''
+      }
+
+
       // api call to save all the data
       let response = await saveSignUpData(name.toLowerCase(), email.toLowerCase().trim(), password);
       // console.log('helo')
@@ -95,6 +111,8 @@ const SignUp = () => {
           </div>
         </div>  
       </div>
+
+      {otpCheckBox && <div className='absolute w-screen h-screen flex justify-center items-center top-0' style={{backgroundColor:'rgba(0,0,0,0.2)'}}><OtpBox otpCheckBox={otpCheckBox} setOtpCheckBox={setOtpCheckBox} otp={inputOTP} setOtp = {setInputOTP} mainOTP={fetchedOTP} name={name.toLowerCase()} email={email.toLowerCase().trim()} password={password}/></div>}
     </>  
   )
 }
