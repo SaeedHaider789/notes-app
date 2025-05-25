@@ -12,6 +12,8 @@ const Login = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState(null)
 
+  document.querySelector('body').classList.remove('bg-gray-900')  // it will finish the dark mode
+
   const handleLogin = async(e) => {
     e.preventDefault()
     if(!validateEmail(email)){

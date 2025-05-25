@@ -13,11 +13,14 @@ const NoteCard = ({
     onDelete,
     onPinNote,
     setDocs,
-    setOpenEditNotes
+    setOpenEditNotes,
+    darkMode,
+    index // used for the coloring in dark mode
 }) => {
-  
+  const darkModeColrArr = ['bg-pink-400', 'bg-rose-300', 'bg-green-400', 'bg-yellow-200', 'bg-cyan-200', 'bg-purple-300']
   return (
-    <div id={id} className="verySmallContainer card border-2 border-slate-300 max-sm:m-1 max-sm:p-1 max-sm:mr-1 p-4 flex justify-between items-center">
+    //                         -> the below code will get the color based on index
+    <div id={id} className={`${darkMode && darkModeColrArr[(index % darkModeColrArr.length)]} ${darkMode ? 'rounded-md' : 'border-2 border-slate-300'} verySmallContainer card  max-sm:m-1 max-sm:p-1 max-sm:mr-1 p-4 flex justify-between items-center`}>
       <div className="verySmall card-details max-sm:w-70 w-80 overflow-hidden">
         <p className="text-title font-semibold break-words whitespace-normal">{title}</p>
         <div className="body">

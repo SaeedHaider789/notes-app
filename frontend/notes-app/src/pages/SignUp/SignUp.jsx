@@ -65,7 +65,7 @@ const SignUp = () => {
       //   setFetchedOTP(otp)
       //   return ''
       // }
-      // otp verification is not working on vercel
+
 
       // api call to save all the data
       let response = await saveSignUpData(name.toLowerCase(), email.toLowerCase().trim(), password);
