@@ -63,7 +63,12 @@ const Home = () => {
   // console.log('arr', renderArr)
 
   useEffect(()=>{ //this will turn the main body black on darkMode
-    document.querySelector('body').classList.toggle('bg-gray-900')
+    if(darkMode){
+      document.querySelector('body').classList.add('bg-gray-900')
+    }
+    else{
+      document.querySelector('body').classList.remove('bg-gray-900')
+    }
   }, [darkMode])
 
   return (
